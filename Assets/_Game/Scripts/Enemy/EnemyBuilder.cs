@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace Zenject.TD
@@ -14,6 +14,7 @@ namespace Zenject.TD
         [SerializeField]
         Rigidbody _rigidBody = null;
 
+        
         [Inject]
         public EnemyFacade Facade
         {
@@ -28,11 +29,17 @@ namespace Zenject.TD
         {
             get { return _rigidBody; }
         }
-
         public Vector3 Position
         {
             get { return _rigidBody.transform.position; }
             set { _rigidBody.transform.position = value; }
+        }
+
+        public void Move(Vector3 translation,Space space)
+        {
+            Transform transform = _rigidBody.transform;
+
+            transform.Translate(translation, space);
         }
     }
 

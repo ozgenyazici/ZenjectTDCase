@@ -14,9 +14,9 @@ namespace Zenject.TD
     }
     public enum EnemyStates
     {
-        None,
         Idle,
-        Walk
+        Walk,
+        None
     }
 
     public class EnemyStateManager : ITickable, IFixedTickable, IInitializable
@@ -30,18 +30,18 @@ namespace Zenject.TD
         List<IEnemyState> _states;
 
         [Inject]
-        public void Construct(EnemyBuilder builder, EnemyStateIdle idle)
+        public void Construct(EnemyBuilder builder, EnemyStateIdle idle, EnemyStateWalk walk)
         {
 
             _builder = builder;
-            _states = new List<IEnemyState> { idle };
+            _states = new List<IEnemyState> { idle, walk };
         }
         public void Initialize()
         {
             Assert.IsEqual(_currentState, EnemyStates.None);
             Assert.IsNull(_currentStateHandler);
 
-            ChangeState(EnemyStates.Walk);
+            ChangeState(EnemyStates.Idle);
         }
 
         public void ChangeState(EnemyStates state)

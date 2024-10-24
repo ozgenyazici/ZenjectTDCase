@@ -11,7 +11,8 @@ namespace Zenject.TD
         readonly Settings _settings;
         readonly SignalBus _signalBus;
 
-        public EnemySpawner(Settings settings,
+        public EnemySpawner(
+            Settings settings,
             SignalBus signalBus,
             EnemyFacade.Factory enemyFactory)
         {
@@ -35,8 +36,7 @@ namespace Zenject.TD
             float accuracy = Random.Range(_settings.AccuracyMin, _settings.AccuracyMax);
 
             var enemyFacade = _enemyFactory.Create(accuracy, speed);
-            //enemyFacade.Position=this
-
+            enemyFacade.Position = new Vector3(40, 0, -15);
 
             _lastSpawnTime = Time.realtimeSinceStartup;
         }
@@ -72,6 +72,8 @@ namespace Zenject.TD
             public float NumEnemiesStartAmount;
 
             public float DelayBetweenSpawns = 0.5f;
+
+            public GameObject spawnPoint;
         }
     }
 

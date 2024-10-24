@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfa18ba3e20644a43adf5780a82c56cb, type: 3}
+  m_Name: GameSettings
+  m_EditorClassIdentifier: 
+  EnemySpawner:
+    SpeedMin: 10
+    SpeedMax: 50
+    AccuracyMin: 0
+    AccuracyMax: 1
+    NumEnemiesIncreaseRate: 1
+    NumEnemiesStartAmount: 1.5
+    DelayBetweenSpawns: 0.5
+    spawnPoint: {fileID: 0}
+  GameInstaller:
+    EnemyFacadePrefab: {fileID: 3878843003868658805, guid: 1cd9b2729e6bc4d40a9463c245876102, type: 3}
+    BulletPrefab: {fileID: 3246575863752063144, guid: f3d9c509061a6e6478a48b5c53129b01, type: 3}
+    TurretPrefab: {fileID: 3794752413694137490, guid: 42f856ce75177824298ed8e77ef94be2, type: 3}
